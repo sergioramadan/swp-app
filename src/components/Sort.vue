@@ -14,7 +14,7 @@ import { ASC, DSC, NONE } from "@/helpers/SortOptions";
 export default {
   data: () => ({
     defaultValue: NONE,
-    items: [NONE, ASC, DSC],
+    items: [NONE, ASC, DSC]
   }),
   methods: {
     triggerChange(value) {

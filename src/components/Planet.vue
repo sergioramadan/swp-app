@@ -8,13 +8,13 @@
         <v-col cols="12">
           <h3>Planet Data</h3>
         </v-col>
-        <PlanetInfo title="Rotation Period">
+        <PlanetInfo title="Rotation Period (Hours)">
           {{info.rotation_period}}
         </PlanetInfo>
-        <PlanetInfo title="Orbital Period">
+        <PlanetInfo title="Orbital Period (Days)">
           {{info.orbital_period}}
         </PlanetInfo>
-        <PlanetInfo title="Diameter">
+        <PlanetInfo title="Diameter (Km)">
           {{info.diameter}}
         </PlanetInfo>
         <PlanetInfo title="Climate">
@@ -71,9 +71,5 @@ export default {
   .planet-card {
     margin: 5px;
     padding: 10px;
-  }
-
-  span {
-    text-transform: capitalize;
   }
 </style>
