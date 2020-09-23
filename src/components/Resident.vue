@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <a>{{residentData.name}}</a>
-  </div>
+  <li>{{residentData.name}}</li>
 </template>
 
 <script>

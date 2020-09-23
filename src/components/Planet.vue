@@ -1,30 +1,44 @@
 <template>
-  <v-card 
-    class="pa-2 planet-card"
-    outlined
-    tile>
-    <h2 @click="toggleData">{{info.name}}</h2>
-    <div v-if="showData">
-      <h3>Planet Data</h3>
-      <h4>Rotation Period</h4>
-      {{info.rotation_period}}
-      <h4>Orbital Period</h4>
-      {{info.orbital_period}}
-      <h4>Diameter</h4>
-      {{info.diameter}}
-      <h4>Climate</h4>
-      {{info.climate}}
-      <h4>Gravity</h4>
-      {{info.gravity}}
-      <h4>Population</h4>
-      {{info.population}}
-      <ResidentList :list="info.residents"/>
-      <FilmList :list="info.films" />
-    </div>
-  </v-card>
+  <v-expansion-panel>
+    <v-expansion-panel-header>
+      <h2>{{info.name}}</h2>
+    </v-expansion-panel-header>
+    <v-expansion-panel-content>
+      <v-row no-gutters>
+        <v-col cols="12">
+          <h3>Planet Data</h3>
+        </v-col>
+        <PlanetInfo title="Rotation Period">
+          {{info.rotation_period}}
+        </PlanetInfo>
+        <PlanetInfo title="Orbital Period">
+          {{info.orbital_period}}
+        </PlanetInfo>
+        <PlanetInfo title="Diameter">
+          {{info.diameter}}
+        </PlanetInfo>
+        <PlanetInfo title="Climate">
+          {{info.climate}}
+        </PlanetInfo>
+        <PlanetInfo title="Gravity">
+          {{info.gravity}}
+        </PlanetInfo>
+        <PlanetInfo title="Population">
+          {{info.population}}
+        </PlanetInfo>
+        <PlanetInfo title="Residents">
+          <ResidentList :list="info.residents" />
+        </PlanetInfo>
+        <PlanetInfo title="Films">
+          <FilmList :list="info.films" />
+        </PlanetInfo>
+      </v-row>
+    </v-expansion-panel-content>
+  </v-expansion-panel>
 </template>
 
 <script>
+import PlanetInfo from "./PlanetInfo";
 import FilmList from "./FilmList";
 import ResidentList from "./ResidentList";
 
@@ -32,7 +46,8 @@ export default {
   name: 'Planet',
   components: {
     FilmList,
-    ResidentList
+    ResidentList,
+    PlanetInfo
   },
   props: {
     info: {
@@ -57,6 +72,7 @@ export default {
     margin: 5px;
     padding: 10px;
   }
+
   span {
     text-transform: capitalize;
   }

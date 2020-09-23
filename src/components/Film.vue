@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <a>{{filmData.title}}</a>
-  </div>
+  <li>{{filmData.title}}</li>
 </template>
 
 <script>

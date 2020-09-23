@@ -1,14 +1,11 @@
 <template>
-  <v-row no-gutters>
-    <v-col
+  <v-expansion-panels>
+    <Planet
       v-for="element in list"
       :key="element.name"
-      cols="12"
-      sm="4"
-    >
-      <Planet :info="element" />
-    </v-col>
-  </v-row>
+      :info="element"
+    />
+  </v-expansion-panels>
 </template>
 
 <script>

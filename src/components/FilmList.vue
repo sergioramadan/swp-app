@@ -1,13 +1,12 @@
 <template>
   <div>
-    <h4>Films</h4>
-    <div v-if="list.length">
+    <ul v-if="list.length">
       <Film
         v-for="element in list"
         :key="element"
         :apiUrl="element"
       />
-    </div>
+    </ul>
     <span v-else>No results</span>
   </div>
 </template>
